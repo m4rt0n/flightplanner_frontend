@@ -7,7 +7,7 @@ import CompanyService from './services/CompanyService';
 
 
 const Companies = () => {
-  
+
 
   const [companies, setCompanies] = useState([])
   const [editing, setEditing] = useState(false)
@@ -18,20 +18,20 @@ const Companies = () => {
     getCompanies();
   }, []);
 
-const refreshList=()=>{
-  getCompanies();
-  setCurrentCompany(null);
-}
+  const refreshList = () => {
+    getCompanies();
+    setCurrentCompany(null);
+  }
 
-const getCompanies=()=>{
-  CompanyService.getAllCompanies().then(response=>{
-    setCompanies(response.data);
-    console.log(response.data);
-  })
-  .catch(e=>{
-    console.log(e);
-  });
-};
+  const getCompanies = () => {
+    CompanyService.getAllCompanies().then(response => {
+      setCompanies(response.data);
+      console.log(response.data);
+    })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   const editRow = (company) => {
     setEditing(true)
@@ -39,24 +39,33 @@ const getCompanies=()=>{
   }
 
   const addCompany = (company) => {
-    company.id = companies.length + 1
-    setCompanies([...companies, company]);
+  //  company.id = companies.length + 1
+  //  setCompanies([...companies, company]);
     console.log(company)
+    CompanyService.saveCompany(company.code, company.name).then(response => {
+      console.log(response.data);
+      refreshList();
+    }).catch(e => {
+      console.log(e);
+    });
   }
 
   const deleteCompany = (id) => {
     setEditing(false)
-  //  setCompanies(companies.filter((company) => company.id !== id))
-
-  CompanyService.deleteCompany(id).then(response=>{
-    console.log(response.data);
-    refreshList();
-  })
+    CompanyService.deleteCompany(id).then(response => {
+      console.log(response.data);
+      refreshList();
+    })
   }
 
   const updateCompany = (id, updatedCompany) => {
     setEditing(false)
-    setCompanies(companies.map((company) => (company.id === id ? updatedCompany : company)))
+  //  setCompanies(companies.map((company) => (company.id === id ? updatedCompany : company)))
+  CompanyService.updateCompany(id, updatedCompany.code, updatedCompany.name)
+    .then(response => {
+    console.log(response.data);
+    refreshList();
+  })
   }
 
   return (

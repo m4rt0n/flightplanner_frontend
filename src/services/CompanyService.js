@@ -9,7 +9,7 @@ class CompanyService {
     }
 
     saveCompany(companyCode, companyName) {
-        return axios.post(COMPANY_API_BASE_URL + '/save' + companyCode, companyName)
+        return axios.post(COMPANY_API_BASE_URL + '/save?' + 'code=' + companyCode, 'name=' + companyName)
     }
 
     getCompanyById(companyId) {
@@ -17,7 +17,7 @@ class CompanyService {
     }
 
     updateCompany(companyId, companyCode, companyName) {
-        return axios.put(COMPANY_API_BASE_URL + '/update/' + companyId, companyCode, companyName)
+        return axios.put(COMPANY_API_BASE_URL + '/update/'  + companyId + '?' + 'code=' + companyCode, 'name=' + companyName)
     }
 
     deleteCompany(companyId) {
