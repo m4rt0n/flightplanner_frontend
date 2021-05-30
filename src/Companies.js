@@ -35,13 +35,11 @@ const Companies = () => {
 
   const editRow = (company) => {
     setEditing(true)
-    setCurrentCompany({ id: company.id, code: company.code, name: company.name })
+    console.log(company)
+    setCurrentCompany({ id: company.id, code: company.companyCode, name: company.companyName })
   }
 
   const addCompany = (company) => {
-  //  company.id = companies.length + 1
-  //  setCompanies([...companies, company]);
-    console.log(company)
     CompanyService.saveCompany(company.code, company.name).then(response => {
       console.log(response.data);
       refreshList();
@@ -60,7 +58,6 @@ const Companies = () => {
 
   const updateCompany = (id, updatedCompany) => {
     setEditing(false)
-  //  setCompanies(companies.map((company) => (company.id === id ? updatedCompany : company)))
   CompanyService.updateCompany(id, updatedCompany.code, updatedCompany.name)
     .then(response => {
     console.log(response.data);

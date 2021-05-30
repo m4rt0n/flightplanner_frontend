@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 const EditCompanyForm = (props) => {
+   
     const [company, setCompany] = useState(props.currentCompany)
-
     useEffect(() => {
         setCompany(props.currentCompany)
     }, [props])
@@ -10,7 +10,6 @@ const EditCompanyForm = (props) => {
     const handleInputChange = (event) => {
         event.preventDefault()
         const { name, value } = event.target
-
         setCompany({ ...company, [name]: value })
     }
 
@@ -37,7 +36,7 @@ const EditCompanyForm = (props) => {
                 onChange={handleInputChange}
             />
  <button>Update company</button>
-      <button onClick={() => props.setEditing(false)} className="button muted-button">
+      <button onClick={() => props.setEditing(false)} className="updateButton">
         Cancel
       </button>
         </form>
