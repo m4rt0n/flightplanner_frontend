@@ -1,13 +1,74 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
+import FlightTable from './tables/FlightTable';
+import CompanyService from './services/CompanyService';
 
-class CustomFlights extends Component {
-  render() {
-    return (
-        <div>
-          <h2>CustomFlights</h2>
-        </div>
-    );
-  }
+const CustomFlights = () => {
+
+  const initialFormState = {departure: '', arrival: '' }
+  const [flights, setFlights] = useState([]);
+  const [searchFlight , setSearchFlight] = useState("");
+  
+
+  const handleInputChange = event => {
+    event.preventDefault();
+    const { name, value } = event.target
+    setSearchFlight({ ...searchFlight, [name]: value });
+  };
+/*
+  useEffect(() => {
+    console.log(searchFlight);
+    findFlightsByParams(searchFlight);
+  }, []);
+*/
+  const findFlightsByParams = (searchFlight) => {
+   console.log(searchFlight.departure+" "+searchFlight.arrival);  
+  
+   CompanyService.getflightsbyairports(searchFlight.departure, searchFlight.arrival)
+      .then(response => {
+        setFlights(response.data);
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+      
+  };
+
+
+  return (
+    <div>
+     
+      <div>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault()
+            if (!searchFlight.departure || !searchFlight.arrival) return
+            setSearchFlight(initialFormState)
+        }}
+        >
+          <label>Departure</label>
+          <input
+            type="text"
+            name="departure"
+            value={searchFlight.departure}
+            onChange={handleInputChange}
+          />
+          <label>Arrival</label>
+          <input
+            type="text"
+            name="arrival"
+            value={searchFlight.arrival}
+            onChange={handleInputChange}
+          />
+          <button onClick={() => findFlightsByParams(searchFlight)}>Search</button>
+        </form>
+      </div>
+      <div>
+        <FlightTable flights={flights} />
+      </div>
+    </div>
+  );
+
 }
 
 export default CustomFlights;

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 const EditCompanyForm = (props) => {
    
     const [company, setCompany] = useState(props.currentCompany)
+    
     useEffect(() => {
         setCompany(props.currentCompany)
     }, [props])

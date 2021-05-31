@@ -7,7 +7,6 @@ const AddCompanyForm = (props) => {
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
-
         setCompany({ ...company, [name]: value })
     }
 

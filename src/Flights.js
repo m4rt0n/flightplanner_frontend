@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import SearchCompanyForm from './forms/SearchCompanyForm';
+import FlightTable from './tables/FlightTable';
 import CompanyService from './services/CompanyService';
 
 const Flights = () => {
 
   const [flights, setFlights] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(useState(""));
-
+  const [searchCompany, setsearchCompany] = useState("");
+  
   const handleInputChange = event => {
-    setSearchTerm(event.target.value);
+    setsearchCompany(event.target.value);
   };
 
   useEffect(() => {
-    findFlightsByCompanyName(searchTerm);
+    findFlightsByCompanyName(searchCompany);
   }, []);
 
-
-
-
-  const findFlightsByCompanyName = (searchTerm) => {
-    CompanyService.findFlightsByCompanyName(searchTerm)
+  const findFlightsByCompanyName = (searchCompany) => {
+    CompanyService.getFlightsByCompanyName(searchCompany)
       .then(response => {
         setFlights(response.data);
         console.log(response.data);
@@ -43,23 +40,15 @@ const Flights = () => {
           <input
             type="text"
             name="name"
-            value={searchTerm}
+            value={searchCompany}
             onChange={handleInputChange}
           />
-          <button onClick={() => findFlightsByCompanyName(searchTerm)}>Search</button>
+          <button onClick={() => findFlightsByCompanyName(searchCompany)}>Search</button>
         </form >
       </div>
 
       <div>
-        <ul>
-
-        {flights.map(flight => (
-          <li key={flight.id}>
-            {flight.id}</li>
-           
-        ))}
-
-        </ul>
+        <FlightTable flights={flights}/>
       </div>
     </div>
   );
