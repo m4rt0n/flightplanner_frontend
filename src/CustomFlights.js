@@ -4,29 +4,24 @@ import CompanyService from './services/CompanyService';
 
 const CustomFlights = () => {
 
-  const initialFormState = {departure: '', arrival: '' }
+  const initialFormState = { departure: '', arrival: '' }
   const [flights, setFlights] = useState([]);
-  const [searchFlight , setSearchFlight] = useState("");
-  
+  const [searchFlight, setSearchFlight] = useState("");
+
 
   const handleInputChange = event => {
     event.preventDefault();
-    const { name, value } = event.target
+    const { name, value } = event.target;
     setSearchFlight({ ...searchFlight, [name]: value });
   };
-/*
-  useEffect(() => {
-    console.log(searchFlight);
-    findFlightsByParams(searchFlight);
-  }, []);
-*/
+
   const findFlightsByParams = (searchFlight) => {
-   console.log(searchFlight.departure+" "+searchFlight.arrival);  
-  
-   CompanyService.getflightsbyairports(searchFlight.departure, searchFlight.arrival)
+
+    console.log(searchFlight.departure + " " + searchFlight.arrival);
+    CompanyService.getflightsbyairports(searchFlight.departure, searchFlight.arrival)
       .then(response => {
-        setFlights(response.data);
-        console.log(response.data);
+        setFlights(response);
+        console.log("response: "+response);
       })
       .catch(e => {
         console.log(e);
@@ -37,14 +32,14 @@ const CustomFlights = () => {
 
   return (
     <div>
-     
+
       <div>
         <form
           onSubmit={(event) => {
             event.preventDefault()
             if (!searchFlight.departure || !searchFlight.arrival) return
             setSearchFlight(initialFormState)
-        }}
+          }}
         >
           <label>Departure</label>
           <input
