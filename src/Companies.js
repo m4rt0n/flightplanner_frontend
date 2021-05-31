@@ -5,10 +5,7 @@ import EditCompanyForm from './forms/EditCompanyForm';
 import CompanyService from './services/CompanyService';
 
 
-
 const Companies = () => {
-
-
   const [companies, setCompanies] = useState([])
   const [editing, setEditing] = useState(false)
   const initialFormState = { id: null, code: '', name: '' }
@@ -58,11 +55,11 @@ const Companies = () => {
 
   const updateCompany = (id, updatedCompany) => {
     setEditing(false)
-  CompanyService.updateCompany(id, updatedCompany.code, updatedCompany.name)
-    .then(response => {
-    console.log(response.data);
-    refreshList();
-  })
+    CompanyService.updateCompany(id, updatedCompany.code, updatedCompany.name)
+      .then(response => {
+        console.log(response.data);
+        refreshList();
+      })
   }
 
   return (

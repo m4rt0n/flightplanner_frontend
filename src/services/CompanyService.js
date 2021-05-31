@@ -24,5 +24,9 @@ class CompanyService {
         return axios.delete(COMPANY_API_BASE_URL + '/delete/' + companyId)
     }
 
+    findFlightsByCompanyName(companyName){
+        return axios.get(COMPANY_API_BASE_URL+'/getallflights?'+'name=' + companyName)
+    }
+
 }
 export default new CompanyService()
