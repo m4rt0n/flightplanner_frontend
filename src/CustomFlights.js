@@ -15,12 +15,15 @@ const CustomFlights = () => {
     setSearchFlight({ ...searchFlight, [name]: value });
   };
 
+  
+
+
   const findFlightsByParams = (searchFlight) => {
 
     console.log(searchFlight.departure + " " + searchFlight.arrival);
     CompanyService.getflightsbyairports(searchFlight.departure, searchFlight.arrival)
       .then(response => {
-        setFlights(response);
+        setFlights(response.data);
         console.log("response: "+response);
       })
       .catch(e => {

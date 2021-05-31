@@ -1,6 +1,7 @@
 import React from 'react'
 
 const FlightTable = (props)=>(
+    
 <table>
         <thead>
             <tr>
