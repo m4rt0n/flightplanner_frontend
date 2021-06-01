@@ -1,7 +1,7 @@
 # flightplanner_frontend
 
 ## Page 1 – Companies Crud
-![Page 1 Image 1] (https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_1.JPG)
+![Page 1 Image 1](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_1.JPG)
 
 ![Page 1 Image 2] (https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_2.JPG)
 
