@@ -4,8 +4,8 @@ import AddCompanyForm from './forms/AddCompanyForm';
 import EditCompanyForm from './forms/EditCompanyForm';
 import CompanyService from './services/CompanyService';
 
-
 const Companies = () => {
+
   const [companies, setCompanies] = useState([])
   const [editing, setEditing] = useState(false)
   const initialFormState = { id: null, code: '', name: '' }
@@ -23,7 +23,6 @@ const Companies = () => {
   const getCompanies = () => {
     CompanyService.getAllCompanies().then(response => {
       setCompanies(response.data);
-      console.log(response.data);
     })
       .catch(e => {
         console.log(e);
@@ -32,13 +31,11 @@ const Companies = () => {
 
   const editRow = (company) => {
     setEditing(true)
-    console.log(company)
     setCurrentCompany({ id: company.id, code: company.companyCode, name: company.companyName })
   }
 
   const addCompany = (company) => {
     CompanyService.saveCompany(company.code, company.name).then(response => {
-      console.log(response.data);
       refreshList();
     }).catch(e => {
       console.log(e);
@@ -47,8 +44,7 @@ const Companies = () => {
 
   const deleteCompany = (id) => {
     setEditing(false)
-    CompanyService.deleteCompany(id).then(response => {
-      console.log(response.data);
+    CompanyService.deleteCompany(id).then(() => {
       refreshList();
     })
   }
@@ -56,8 +52,7 @@ const Companies = () => {
   const updateCompany = (id, updatedCompany) => {
     setEditing(false)
     CompanyService.updateCompany(id, updatedCompany.code, updatedCompany.name)
-      .then(response => {
-        console.log(response.data);
+      .then(() => {
         refreshList();
       })
   }

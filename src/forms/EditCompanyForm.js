@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 const EditCompanyForm = (props) => {
-   
+
     const [company, setCompany] = useState(props.currentCompany)
-    
+
     useEffect(() => {
         setCompany(props.currentCompany)
     }, [props])
@@ -21,7 +21,6 @@ const EditCompanyForm = (props) => {
                 props.updateCompany(company.id, company)
             }}
         >
-
             <label>Code</label>
             <input
                 type="text"
@@ -36,9 +35,9 @@ const EditCompanyForm = (props) => {
                 value={company.name}
                 onChange={handleInputChange}
             />
- <button>Update company</button>
-      <button onClick={() => props.setEditing(false)} className="updateButton">
-        Cancel
+            <button>Update company</button>
+            <button onClick={() => props.setEditing(false)} className="updateButton">
+                Cancel
       </button>
         </form>
     )

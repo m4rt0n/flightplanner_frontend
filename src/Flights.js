@@ -6,7 +6,7 @@ const Flights = () => {
 
   const [flights, setFlights] = useState([]);
   const [searchCompany, setsearchCompany] = useState("");
-  
+
   const handleInputChange = event => {
     setsearchCompany(event.target.value);
   };
@@ -19,7 +19,6 @@ const Flights = () => {
     CompanyService.getFlightsByCompanyName(searchCompany)
       .then(response => {
         setFlights(response.data);
-        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -35,7 +34,6 @@ const Flights = () => {
             event.preventDefault()
           }}
         >
-
           <label>Name</label>
           <input
             type="text"
@@ -46,13 +44,11 @@ const Flights = () => {
           <button onClick={() => findFlightsByCompanyName(searchCompany)}>Search</button>
         </form >
       </div>
-
       <div>
-        <FlightTable flights={flights}/>
+        <FlightTable flights={flights} />
       </div>
     </div>
   );
-
 }
 
 export default Flights;

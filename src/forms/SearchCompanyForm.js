@@ -10,18 +10,14 @@ const SearchCompanyForm = (props) => {
     const handleInputChange = (event) => {
         event.preventDefault()
         const { name, value } = event.target
-       
     }
 
     return (
-
         <form
             onSubmit={(event) => {
                 event.preventDefault()
-                
             }}
         >
-
             <label>Name</label>
             <input
                 type="text"
@@ -29,11 +25,9 @@ const SearchCompanyForm = (props) => {
                 value={company.name}
                 onChange={handleInputChange}
             />
-
             <button onClick={() => props.findFlightsByCompanyName()} >Find</button>
         </form>
     )
-
 }
 
 export default SearchCompanyForm;

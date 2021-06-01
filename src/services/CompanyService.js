@@ -29,12 +29,11 @@ class CompanyService {
     }
 
     getflightsbyairports(departure, arrival) {
-       
+
         return axios.post(COMPANY_API_BASE_URL + '/getflightsbyairports?' +
- //  {departure:  departure,  arrival:  arrival}
- 'departure=' + departure,  'arrival=' + arrival
+            'departure=' + departure, 'arrival=' + arrival
         );
     }
-
 }
+
 export default new CompanyService()

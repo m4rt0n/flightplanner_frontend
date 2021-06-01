@@ -5,9 +5,10 @@ import Flights from './Flights';
 import CustomFlights from './CustomFlights';
 
 class App extends Component {
+
   render() {
     return (
-    <Router>
+      <Router>
         <div>
           <h2>Flight Planner</h2>
           <ul>
@@ -17,9 +18,9 @@ class App extends Component {
           </ul>
           <hr />
           <Switch>
-              <Route exact path='/' component={Companies} />
-              <Route path='/flights' component={Flights} />
-              <Route path='/customflights' component={CustomFlights} />
+            <Route exact path='/' component={Companies} />
+            <Route path='/flights' component={Flights} />
+            <Route path='/customflights' component={CustomFlights} />
           </Switch>
         </div>
       </Router>

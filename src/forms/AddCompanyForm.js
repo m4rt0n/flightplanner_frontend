@@ -10,13 +10,11 @@ const AddCompanyForm = (props) => {
         setCompany({ ...company, [name]: value })
     }
 
-
     return (
         <form
             onSubmit={(event) => {
                 event.preventDefault()
                 if (!company.name || !company.code) return
-
                 props.addCompany(company)
                 setCompany(initialFormState)
             }}

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FlightTable from './tables/FlightTable';
 import CompanyService from './services/CompanyService';
 
@@ -8,34 +8,24 @@ const CustomFlights = () => {
   const [flights, setFlights] = useState([]);
   const [searchFlight, setSearchFlight] = useState("");
 
-
   const handleInputChange = event => {
     event.preventDefault();
     const { name, value } = event.target;
     setSearchFlight({ ...searchFlight, [name]: value });
   };
 
-  
-
-
   const findFlightsByParams = (searchFlight) => {
-
-    console.log(searchFlight.departure + " " + searchFlight.arrival);
     CompanyService.getflightsbyairports(searchFlight.departure, searchFlight.arrival)
       .then(response => {
         setFlights(response.data);
-        console.log("response: "+response);
       })
       .catch(e => {
         console.log(e);
       });
-      
   };
-
 
   return (
     <div>
-
       <div>
         <form
           onSubmit={(event) => {
@@ -66,7 +56,6 @@ const CustomFlights = () => {
       </div>
     </div>
   );
-
 }
 
 export default CustomFlights;

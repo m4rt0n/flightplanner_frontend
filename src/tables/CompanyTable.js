@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CompanyTable = (props) => (
-    
+
     <table>
         <thead>
             <tr>
@@ -12,7 +12,6 @@ const CompanyTable = (props) => (
         </thead>
         <tbody>
             {props.companies.length > 0 ? (
-                
                 props.companies.map((company) => (
                     <tr key={company.id}>
                         <td>{company.companyCode}</td>
@@ -27,7 +26,6 @@ const CompanyTable = (props) => (
                         </td>
                     </tr>
                 ))
-                
             ) : (
                 <tr>
                     <td colSpan={3}>No companies</td>
