@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Flightplanner Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Page 1 – Companies Crud
 
-## Available Scripts
+### Initial View
+![Page 1 Image 1](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_1.JPG)
 
-In the project directory, you can run:
+### Clicked Edit on Company
+![Page 1 Image 2](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_2.JPG)
 
-### `npm start`
+### Changed Company Params in Form
+![Page 1 Image 3](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_3.JPG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Edited Company Saved & Appears in List
+![Page 1 Image 4](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_4.JPG)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+###  Filled New Company Form
+![Page 1 Image 5](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_5.JPG)
 
-### `npm test`
+### Clicked Add New Company & New Company Appears
+![Page 1 Image 6](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_6.JPG)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Clicked Delete On Company & Company Disappears from List
+![Page 1 Image 7](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task1_companies_crud/task1_7.JPG)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Page 2 – Search Flight By Company
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Initial View
+![Page 2 Image 1](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task2_search_flight_by_company/task2_1.JPG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Filled Form & Clicked Search & Results Appear
+![Page 2 Image 2](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task2_search_flight_by_company/task2_2.JPG)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Page 3 – Search Flight By Airports
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Initial View
+![Page 3 Image 1](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task3_search_flights_by_airports/task3_1.JPG)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Filled Form
+![Page 3 Image 2](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task3_search_flights_by_airports/task3_2.JPG)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Results Appear
+![Page 3 Image 3](https://github.com/m4rt0n/flightplanner_frontend/blob/main/images/task3_search_flights_by_airports/task3_3.JPG)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
